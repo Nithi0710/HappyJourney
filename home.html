@@ -1,1 +1,202 @@
-happy journey
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin: 0.5rem 0;
+        }
+
+        input, textarea, select, button {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        .destination {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .destination img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .destination h3 {
+            margin: 0.5rem 0;
+        }
+
+        .destination p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tourism Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#bookings">Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome to the Tourism Management System</h2>
+            <p>Manage your tourism destinations and bookings efficiently.</p>
+        </section>
+
+        <section id="login">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="destinations">
+            <h2>Popular Destinations</h2>
+            <div class="destination">
+                <img src="https://via.placeholder.com/300" alt="Manali">
+                <h3>Manali</h3>
+                <p>Description: A popular hill station in Himachal Pradesh, known for its scenic beauty and adventure sports.</p>
+                <p>Approximate Cost: $500</p>
+            </div>
+            <div class="destination">
+                <img src="https://via.placeholder.com/300" alt="Kashmir">
+                <h3>Kashmir</h3>
+                <p>Description: Known as "Paradise on Earth," Kashmir is famous for its beautiful landscapes and serene lakes.</p>
+                <p>Approximate Cost: $700</p>
+            </div>
+            <div class="destination">
+                <img src="https://via.placeholder.com/300" alt="Varkala">
+                <h3>Varkala</h3>
+                <p>Description: A coastal town in Kerala, known for its beautiful beaches and cliffside views.</p>
+                <p>Approximate Cost: $400</p>
+            </div>
+            <div class="destination">
+                <img src="https://via.placeholder.com/300" alt="Munnar">
+                <h3>Munnar</h3>
+                <p>Description: A hill station in Kerala, famous for its tea plantations and scenic beauty.</p>
+                <p>Approximate Cost: $450</p>
+            </div>
+            <div class="destination">
+                <img src="https://via.placeholder.com/300" alt="Alleppey">
+                <h3>Alleppey</h3>
+                <p>Description: Known for its backwaters and houseboat tours, Alleppey is a popular tourist destination in Kerala.</p>
+                <p>Approximate Cost: $350</p>
+            </div>
+        </section>
+
+        <section id="bookings">
+            <h2>Manage Bookings</h2>
+            <form id="bookingForm">
+                <label for="destination">Destination:</label>
+                <select id="destination" name="destination" required>
+                    <option value="manali">Manali</option>
+                    <option value="kashmir">Kashmir</option>
+                    <option value="varkala">Varkala</option>
+                    <option value="munnar">Munnar</option>
+                    <option value="alleppey">Alleppey</option>
+                </select>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Book</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const bookingForm = document.getElementById('bookingForm');
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
+                    // Handle login logic here
+                    alert(`Logging in with username: ${username}`);
+                });
+            }
+
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const destination = document.getElementById('destination').value;
+                    const date = document.getElementById('date').value;
+                    // Handle booking logic here
+                    alert(`Booking destination: ${destination} on ${date}`);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
